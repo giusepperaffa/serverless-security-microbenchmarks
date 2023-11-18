@@ -1,0 +1,36 @@
+service: aws-python-project
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  settings:
+    BUCKET_NAME: aws-python-project-test-bucket
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: username
+  region: eu-central-1
+  environment: ${self:custom.settings}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:ListBucket"
+        - "s3:GetObject"
+        - "s3:PutObject"
+        - "s3:ListObjects"
+      Resource: "arn:aws:s3:::${self:custom.settings.BUCKET_NAME}/*"
+
+functions:
+  onHTTPPostEvent:
+    handler: handlers/httphandler.onHTTPPostEvent
+    events:
+      - httpApi:
+          method: post
+          path: /produce
+    environment:
+      BUCKET_NAME: ${self:custom.settings.BUCKET_NAME}
+

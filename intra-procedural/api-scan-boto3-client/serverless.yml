@@ -1,0 +1,57 @@
+service: aws-python-project
+
+frameworkVersion: '3'
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  settings:
+    DYNAMODB_TABLE: aws-python-project-test-table
+
+provider:
+  name: aws
+  runtime: python3.8
+  profile: username
+  region: eu-central-1
+  environment: ${self:custom.settings}
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "dynamodb:Query"
+        - "dynamodb:Scan"
+        - "dynamodb:GetItem"
+        - "dynamodb:PutItem"
+        - "dynamodb:UpdateItem"
+        - "dynamodb:DeleteItem"
+        - "dynamodb:ListStreams"
+      Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/${self:custom.settings.DYNAMODB_TABLE}"
+
+functions:
+  onHTTPPostEvent:
+    handler: handlers/httphandler.onHTTPPostEvent
+    events:
+      - httpApi:
+          method: post
+          path: /produce
+    environment:
+      DYNAMODB_TABLE: ${self:custom.settings.DYNAMODB_TABLE}
+
+resources:
+  Resources:
+    TestTable:
+      Type: "AWS::DynamoDB::Table"
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: "itemId"
+            AttributeType: "S"
+        KeySchema:
+          - AttributeName: "itemId"
+            KeyType: "HASH"
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:custom.settings.DYNAMODB_TABLE}
+        StreamSpecification:
+          StreamViewType: NEW_IMAGE
+
