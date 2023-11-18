@@ -1,5 +1,5 @@
 # Description
-Microbenchmark developed by using [api-publish-no-file-system](../api-publish-no-file-system) as baseline. These are the differences:
+Microbenchmark developed by using [api-put-item-boto3-client](../api-put-item-boto3-client) as baseline. These are the main differences:
 
 * The code of the handler `onHTTPPostEvent` includes a different initialization for `uploadFileFolder`, which does _not_ match the folder specified in the YAML file for the `onS3Upload` handler (`prefix` tag).
 
