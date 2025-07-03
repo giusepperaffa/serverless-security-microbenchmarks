@@ -6,6 +6,7 @@ The slides used to present the above-mentioned SANER 2024 paper are available in
 
 Furthermore, this repository contains:
 
+* [Presentation](./docs/Static_Analysis_of_Serverless_Applications_for_Security.pdf) given at the Centre for Doctoral Training Showcase event in April 2025. It includes an overview of serverless security and a summary of the SANER 2024 paper. It also introduces the research presented in the paper [CloudFlow: Identifying Security-sensitive Data Flows in Serverless Applications](https://www.usenix.org/conference/usenixsecurity25/presentation/raffa) accepted for publication at the _USENIX Security ‘25 Conference_.
 * [Presentation](./docs/Static_Analysis_of_Serverless_Applications_Recent_Results.pdf) given at the Centre for Doctoral Training Showcase event in April 2024. It includes a summary of the above-mentioned AWSomePy and SANER 2024 papers.
 * [Presentation](./docs/MISCS_Data_Flow_Analysis_Serverless_Presentation.pdf) given at the Mathematics, Information Security and Computer Science (MISCS) Doctoral Conference held at Royal Holloway University of London in April 2024. It is focused on the SANER 2024 paper, but it provides additional information compared to the original SANER 2024 presentation.
 * [Presentation](./docs/SESAME_AWSomePy_Dataset_Presentation.pdf) on the AWSomePy dataset paper given at the _1st Workshop on SErverless Systems, Applications and MEthodologies (SESAME)_ co-located with the EuroSys 2023 conference in May 2023.
