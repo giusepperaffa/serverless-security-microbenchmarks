@@ -12,3 +12,6 @@ Furthermore, this repository contains:
 * [Presentation](./docs/SESAME_AWSomePy_Dataset_Presentation.pdf) on the AWSomePy dataset paper given at the _1st Workshop on SErverless Systems, Applications and MEthodologies (SESAME)_ co-located with the EuroSys 2023 conference in May 2023.
 
 A summary of the research that led to the SANER 2024 paper was also presented at [PyCon Wroclaw](https://www.pyconwroclaw.com/) in November 2024. The PyCon Wroclaw slides are available in this public [GitHub repository](https://github.com/giusepperaffa/pycon-wroclaw-2024/), which includes the shown code examples as well.
+
+# PhD Thesis
+The work presented at SANER 2024 is part of the PhD thesis _Static Analysis of Serverless Applications for Security_. The thesis, which contains further information on how the suite of serverless microbenchmarks was further developed, is available on the [Royal Holloway University of London College Repository](https://pure.royalholloway.ac.uk/en/publications/static-analysis-of-serverless-applications-for-security/), and it can be downloaded from [here](https://pure.royalholloway.ac.uk/ws/portalfiles/portal/70099343/2025raffagphd.pdf).
